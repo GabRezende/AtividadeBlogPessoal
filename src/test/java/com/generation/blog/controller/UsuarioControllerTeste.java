@@ -54,8 +54,9 @@ public class UsuarioControllerTeste {
 				"/usuarios/cadastrar", HttpMethod.POST, corpoRequisição, Usuario.class 
 				); 
 		assertEquals(HttpStatus.CREATED, corpoResposta.getStatusCode()); 
-
 	}  
+	
+	
 		@Test
 		@DisplayName("Não deve permitir duplicação do Usuário")
 		public void naoDeveDuplicarUsuario() {
@@ -71,6 +72,8 @@ public class UsuarioControllerTeste {
 
 		    assertEquals(HttpStatus.BAD_REQUEST, corpoResposta.getStatusCode());
 		}
+		
+		
 		
 			@Test
 			@DisplayName("Atualizar um Usuário")
@@ -91,6 +94,7 @@ public class UsuarioControllerTeste {
 			}
 	
 
+			
 				@Test
 				@DisplayName("Listar todos os Usuários")
 				public void deveMostrarTodosUsuarios() {
